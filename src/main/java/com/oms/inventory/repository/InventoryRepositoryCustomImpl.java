@@ -19,7 +19,7 @@ import static org.springframework.data.mongodb.core.query.Criteria.where;
 
 @Service
 public class InventoryRepositoryCustomImpl implements InventoryRepositoryCustom {
-    public static final String PROD_ID = "id";
+    public static final String PROD_ID = "_id";
     public static final String PROD_COUNT = "count";
     public static final String PROD_THRESHOLD = "threshold";
 
