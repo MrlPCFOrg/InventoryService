@@ -1,5 +1,5 @@
 info:
-    description: "Inventory Management application"
+    description: "Inventory Management Service"
 spring:
   application:
     name: inventory-service

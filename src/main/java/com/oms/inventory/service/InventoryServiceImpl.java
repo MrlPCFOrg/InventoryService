@@ -115,4 +115,11 @@ public class InventoryServiceImpl implements InventoryService {
         });
         return inventoryProdList;
     }
+
+    @Override
+    public void deleteProductRecords(List<String> productIdList) {
+        productIdList.forEach(productId -> {
+            inventoryRepository.delete(productId);
+        });
+    }
 }

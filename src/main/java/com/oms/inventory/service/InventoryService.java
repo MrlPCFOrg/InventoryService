@@ -18,4 +18,6 @@ public interface InventoryService {
 
     //Proxy for Product service.
     List<InventoryProduct> addProductToRepository(List<InventoryProduct> inventoryProducts);
+
+    void deleteProductRecords(List<String> productIdList);
 }

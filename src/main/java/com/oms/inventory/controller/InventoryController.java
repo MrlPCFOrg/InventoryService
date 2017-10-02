@@ -25,17 +25,17 @@ public class InventoryController {
         return inventoryService.addAvailableProductToInventory(inventoryRequest);
     }
 
-    @GetMapping("/{productId}")
+    @GetMapping("/{productId}/count")
     public int getProductCount(@PathVariable String productId){
         return inventoryService.getAvailableProductCountFromInventory(productId);
     }
 
-    @DeleteMapping("/{productId}")
+    @PostMapping("/products/delete")
     public void deleteProductFromInventory(@RequestBody List<String> productIdList){
         inventoryService.deleteProductFromInventory(productIdList);
     }
 
-    @PatchMapping("/{update}")
+    @PatchMapping("/update")
     public void updateProductFromInventory(@RequestBody List<InventoryUpdate> inventoryUpdateList){
         inventoryService.updateInventory(inventoryUpdateList);
     }
@@ -43,5 +43,10 @@ public class InventoryController {
     @PostMapping("/addProduct")
     public List<InventoryProduct> addProduct(@RequestBody List<InventoryProduct> inventoryProducts){
         return inventoryService.addProductToRepository(inventoryProducts);
+    }
+
+    @PostMapping("/deleteProductRecord")
+    public void deleteProducts(@RequestBody List<String> productIdList){
+        inventoryService.deleteProductRecords(productIdList);
     }
 }
