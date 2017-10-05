@@ -10,8 +10,24 @@ spring:
 security:
     basic:
       enabled: false
+
+
+oms:
+  appKey: customer-service
+  common:
+    web:
+      config:
+        swagger:
+          controllerPackage: com.oms.inventory.controller
+          author: PVR
+          apiName: Inventory-Service
+          apiVersion: 1.0.0
+          apiDescription: API for Inventory-service
 logging:
-    level: error
+??level:
+????root: DEBUG
+????org.springframework.web: ERROR
+????com.oms.customer: DEBUG
 #com.oms.inventory: debug
 server:
     port: 9099
