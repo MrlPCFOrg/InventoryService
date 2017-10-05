@@ -1,4 +1,4 @@
-package controller.service
+package service
 
 import com.oms.inventory.controller.InventoryController
 import com.oms.inventory.exception.InventoryProductNotFoundException

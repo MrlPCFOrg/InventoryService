@@ -3,11 +3,15 @@ package com.oms.inventory.model;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collection = "Product")
+import java.util.Date;
+
+@Document(collection = "Inventory")
 public class InventoryProduct {
     @Id
     private String id;
     private int count;
+    private Date createdDate;
+    private Date endDate;
     private String productDisplayName;
     private String description;
     private Double price;
@@ -59,5 +63,21 @@ public class InventoryProduct {
 
     public void setThreshold(int threshold) {
         this.threshold = threshold;
+    }
+
+    public Date getCreatedDate() {
+        return createdDate;
+    }
+
+    public void setCreatedDate(Date createdDate) {
+        this.createdDate = createdDate;
+    }
+
+    public Date getEndDate() {
+        return endDate;
+    }
+
+    public void setEndDate(Date endDate) {
+        this.endDate = endDate;
     }
 }
