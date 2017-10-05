@@ -14,6 +14,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -111,6 +112,7 @@ public class InventoryServiceImpl implements InventoryService {
     public List<InventoryProduct> addProductToRepository(List<InventoryProduct> inventoryProducts) {
         List<InventoryProduct> inventoryProdList = new ArrayList<>();
         inventoryProducts.forEach(inventoryProduct -> {
+            inventoryProduct.setCreatedDate(new Date());
             inventoryProdList.add(inventoryRepository.insert(inventoryProduct));
         });
         return inventoryProdList;
