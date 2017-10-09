@@ -10,3 +10,4 @@ applications:
   services:
     - oms-eureka
     - oms-mongo
+    - oms-configserver
