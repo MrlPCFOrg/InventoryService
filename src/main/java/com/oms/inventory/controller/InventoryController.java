@@ -6,6 +6,9 @@ import com.oms.inventory.model.InventoryResponse;
 import com.oms.inventory.model.InventoryUpdate;
 import com.oms.inventory.service.InventoryService;
 import com.oms.inventory.service.InventoryServiceImpl;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -15,6 +18,11 @@ import java.util.List;
 public class InventoryController {
 
     private InventoryService inventoryService;
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(InventoryController.class);
+
+    @Value("${message.orderPaymentExchange:my default value}")
+    private String test;
 
     public InventoryController(InventoryServiceImpl inventoryService) {
         this.inventoryService = inventoryService;
@@ -42,6 +50,7 @@ public class InventoryController {
 
     @PostMapping("/addProduct")
     public List<InventoryProduct> addProduct(@RequestBody List<InventoryProduct> inventoryProducts){
+        LOGGER.info("*****PVR_Ashok_Test : " + test);
         return inventoryService.addProductToRepository(inventoryProducts);
     }
 
