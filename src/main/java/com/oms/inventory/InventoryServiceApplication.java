@@ -2,6 +2,7 @@ package com.oms.inventory;
 
 import com.oms.common.web.EnableOMSCommonWeb;
 import org.springframework.boot.SpringApplication;
+import com.oms.common.security.config.EnableOMSSecurity;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
