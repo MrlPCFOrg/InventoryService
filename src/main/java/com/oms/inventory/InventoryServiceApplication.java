@@ -8,7 +8,7 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
 @SpringBootApplication
 @EnableOMSCommonWeb
-//@EnableEurekaClient
+@EnableEurekaClient
 @EnableOMSSecurity
 public class InventoryServiceApplication {
 
