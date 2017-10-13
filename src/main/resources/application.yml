@@ -9,7 +9,7 @@ spring:
         database: OMS
 security:
     basic:
-      enabled: true
+      enabled: false
 
 oms:
   appKey: inventory-service
