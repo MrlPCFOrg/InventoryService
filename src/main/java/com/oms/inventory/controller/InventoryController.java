@@ -56,6 +56,7 @@ public class InventoryController {
 
     @PostMapping("/deleteProductRecord")
     public void deleteProducts(@RequestBody List<String> productIdList){
+        LOGGER.info("message={}","Logging IPC call from Product on delete event");
         inventoryService.deleteProductRecords(productIdList);
     }
 }
